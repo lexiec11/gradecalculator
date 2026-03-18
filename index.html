@@ -3,349 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sol Camps London 2026 — Summer Camp for Teens</title>
-  <meta name="description" content="Join Sol Camps London 2026! International summer camp for teenagers aged 13-17 at UCL. Learn English, explore London, make friends from around the world." />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --sky: #0ea5e9;
-      --sky-light: #52b8ed;
-      --sky-dark: #1e5a8a;
-      --sun: #f0a830;
-      --sun-light: #f5c266;
-      --white: #ffffff;
-      --bg: #f0f8ff;
-      --text: #0f2a3d;
-      --text-muted: #4a6a7a;
-      --accent-bg: #dbeffe;
-      --card-border: #b5d8f0;
-      --radius: 1rem;
-    }
-
-    body {
-      font-family: 'Nunito', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 { font-family: 'Fredoka', sans-serif; }
-
-    a { text-decoration: none; color: inherit; }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* ─── HERO ─── */
-    .hero {
-      background: linear-gradient(135deg, var(--sky), var(--sky-light), var(--sky));
-      color: var(--white);
-      text-align: center;
-      padding: 5rem 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero .float { font-size: 3.5rem; animation: float 3s ease-in-out infinite; }
-    .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero .tagline { font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem; }
-    .hero .date-box {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(8px);
-      border-radius: 1rem;
-      padding: 1.5rem 2.5rem;
-      margin-bottom: 2rem;
-    }
-    .hero .date-box h2 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-    .hero .date-box p { font-size: 1.1rem; opacity: 0.9; }
-
-    .btn {
-      display: inline-block;
-      background: var(--sun);
-      color: var(--text);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 0.9rem 2.5rem;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn:hover { background: var(--sun-light); transform: scale(1.05); }
-
-    /* ─── ABOUT ─── */
-    .about { padding: 5rem 1.5rem; text-align: center; }
-    .about h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
-    .about .intro { max-width: 650px; margin: 0 auto 3rem; font-size: 1.1rem; color: var(--text-muted); }
-
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-    .card {
-      background: var(--white);
-      border: 2px solid var(--accent-bg);
-      border-radius: var(--radius);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .card:hover { border-color: var(--sky); box-shadow: 0 6px 20px rgba(14,165,233,0.12); }
-    .card .emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
-    .card p { font-size: 0.9rem; color: var(--text-muted); }
-
-    /* ─── LOCATION ─── */
-    .location { padding: 5rem 1.5rem; background: var(--accent-bg); }
-    .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
-    .location h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    .location .desc { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      background: var(--sky);
-      color: var(--white);
-      padding: 0.4rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-    .london-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .london-item {
-      background: var(--accent-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 0.5rem;
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-    .london-item span { color: var(--sky); margin-right: 0.4rem; }
-    .location .card-box {
-      background: var(--white);
-      border: 2px solid rgba(14,165,233,0.2);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-    }
-    .location .card-box h3 { font-size: 1.2rem; margin-bottom: 1rem; }
-
-    /* ─── INCLUDED ─── */
-    .included { padding: 5rem 1.5rem; text-align: center; }
-    .included h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .included .sub { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; }
-    .included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 750px; margin: 0 auto; }
-    .included-item {
-      border: 2px solid var(--accent-bg);
-      border-radius: 1rem;
-      padding: 1.5rem 1rem;
-      background: var(--white);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .included-item:hover { border-color: var(--sun); box-shadow: 0 4px 14px rgba(240,168,48,0.15); }
-    .included-item .emoji { font-size: 2rem; margin-bottom: 0.5rem; }
-    .included-item p { font-weight: 700; font-size: 0.95rem; }
-
-    /* ─── TESTIMONIALS ─── */
-    .testimonials { padding: 5rem 1.5rem; background: var(--accent-bg); text-align: center; }
-    .testimonials h2 { font-size: 2.2rem; margin-bottom: 3rem; }
-    .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; }
-    .test-card {
-      background: var(--white);
-      border: 2px solid rgba(14,165,233,0.1);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: box-shadow 0.2s;
-    }
-    .test-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-    .test-card .quote { font-style: italic; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1rem; }
-    .test-card .name { font-weight: 700; }
-    .test-card .country { font-size: 0.9rem; color: var(--sky); }
-
-    /* ─── STATS ─── */
-    .stats {
-      background: linear-gradient(90deg, var(--sky-dark), var(--sky), var(--sky-light));
-      color: var(--white);
-      padding: 4rem 1.5rem;
-    }
-    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center; }
-    .stats-grid .num { font-size: 2.8rem; font-weight: 700; font-family: 'Fredoka', sans-serif; }
-    .stats-grid .label { font-size: 1.05rem; opacity: 0.9; margin-top: 0.25rem; }
-
-    /* ─── FOOTER ─── */
-    .footer {
-      background: var(--sky-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 5rem 1.5rem;
-    }
-    .footer h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    .footer .sub { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
-    .footer .socials { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.6rem; }
-    .footer .socials a { opacity: 0.8; transition: opacity 0.2s; }
-    .footer .socials a:hover { opacity: 1; }
-    .footer .copy { margin-top: 2.5rem; font-size: 0.85rem; opacity: 0.5; }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero .date-box h2 { font-size: 1.3rem; }
-      .location-grid { grid-template-columns: 1fr; }
-      .test-grid { grid-template-columns: 1fr; }
-      .stats-grid .num { font-size: 2rem; }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2rem; }
-      .london-grid { grid-template-columns: 1fr; }
-      .included-grid { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <title>Final Grade Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Ambient orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="float">🌞</p>
-    <h1>Sol Camps</h1>
-    <p class="tagline">Learn. Have Fun. Make Friends.</p>
-    <div class="date-box">
-      <h2>🇬🇧 London Summer Camp 2026</h2>
-      <p>28 June – 2 August 2026</p>
+  <header class="site-header">
+    <div class="header-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/></svg>
     </div>
-    <br />
-    <a href="https://solcamps.com" target="_blank" class="btn">✈️ Visit Sol Camps</a>
-  </section>
+    <h1>Final Grade Calculator</h1>
+    <p>Track assignments, weights, and your current course grade.</p>
+  </header>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="container">
-      <h2>What is Sol Camps?</h2>
-      <p class="intro">Sol Camps is an international summer camp for teenagers aged 13–17. Spend your summer in London learning English, making lifelong friends, and having the best time of your life! 🌞</p>
-      <div class="cards">
-        <div class="card">
-          <div class="emoji">🎓</div>
-          <h3>English Classes at UCL</h3>
-          <p>Study at one of the world's top universities</p>
+  <main class="container">
+    <section class="glass-card">
+      <h2><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Add Assignment</h2>
+      <form id="grade-form" class="grade-form">
+        <div class="form-group">
+          <label for="assignment-name">Assignment Name</label>
+          <input type="text" id="assignment-name" placeholder="Quiz 1" required />
         </div>
-        <div class="card">
-          <div class="emoji">🗺️</div>
-          <h3>Explore London</h3>
-          <p>Exciting excursions across the city every week</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🎉</div>
-          <h3>Social Activities</h3>
-          <p>Parties, sports, talent shows &amp; more</p>
-        </div>
-        <div class="card">
-          <div class="emoji">🌍</div>
-          <h3>International Friends</h3>
-          <p>Meet teenagers from 50+ countries</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATION -->
-  <section class="location">
-    <div class="container">
-      <div class="location-grid">
-        <div>
-          <h2>📍 University College London</h2>
-          <p class="desc">Our London camp is hosted at the prestigious UCL campus in the heart of Bloomsbury. Campers study, eat, and stay in a world-class university setting.</p>
-          <div class="tags">
-            <span class="tag">Day Camp</span>
-            <span class="tag">Overnight Camp</span>
-            <span class="tag">School Groups</span>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="earned">Points Earned</label>
+            <input type="number" id="earned" min="0" step="0.01" placeholder="85" required />
+          </div>
+          <div class="form-group">
+            <label for="possible">Points Possible</label>
+            <input type="number" id="possible" min="0.01" step="0.01" placeholder="100" required />
           </div>
         </div>
-        <div class="card-box">
-          <h3>🏙️ Why London?</h3>
-          <div class="london-grid">
-            <div class="london-item"><span>✓</span> Big Ben &amp; Parliament</div>
-            <div class="london-item"><span>✓</span> British Museum</div>
-            <div class="london-item"><span>✓</span> Tower of London</div>
-            <div class="london-item"><span>✓</span> Camden Market</div>
-            <div class="london-item"><span>✓</span> West End Shows</div>
-            <div class="london-item"><span>✓</span> Hyde Park</div>
-          </div>
+        <div class="form-group">
+          <label for="weight">Weight (%)</label>
+          <input type="number" id="weight" min="0" max="100" step="0.01" placeholder="20" required />
+        </div>
+        <div class="button-row">
+          <button type="submit" class="btn primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Assignment
+          </button>
+          <button type="button" id="reset-btn" class="btn secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Reset All
+          </button>
+        </div>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="glass-card">
+      <h2>Grade Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-box glow-primary">
+          <span class="summary-label">Current Grade</span>
+          <span id="current-grade" class="summary-value">0.00%</span>
+        </div>
+        <div class="summary-box">
+          <span class="summary-label">Weights Entered</span>
+          <span id="weight-total" class="summary-value">0.00%</span>
+        </div>
+        <div class="summary-box glow-accent">
+          <span class="summary-label">Remaining Weight</span>
+          <span id="remaining-weight" class="summary-value accent-text">100.00%</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHAT'S INCLUDED -->
-  <section class="included">
-    <div class="container">
-      <h2>What's Included</h2>
-      <p class="sub">Everything your teen needs for an unforgettable London summer</p>
-      <div class="included-grid">
-        <div class="included-item"><div class="emoji">📚</div><p>English Lessons</p></div>
-        <div class="included-item"><div class="emoji">🏠</div><p>Accommodation</p></div>
-        <div class="included-item"><div class="emoji">🍽️</div><p>All Meals</p></div>
-        <div class="included-item"><div class="emoji">🎢</div><p>Activities &amp; Excursions</p></div>
-        <div class="included-item"><div class="emoji">🛡️</div><p>24/7 Supervision</p></div>
-        <div class="included-item"><div class="emoji">📜</div><p>Certificate of Completion</p></div>
+    <section class="glass-card">
+      <h2>Assignments</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+              <th>Weight</th>
+              <th>Percent</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="assignment-list">
+            <tr id="empty-row">
+              <td colspan="5" class="empty-state">No assignments added yet.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>💬 What Campers Say</h2>
-      <div class="test-grid">
-        <div class="test-card">
-          <p class="quote">"Sol Camps was the best experience of my life! I made friends from all over the world and improved my English so much."</p>
-          <p class="name">Charlyne</p>
-          <p class="country">France 🇫🇷</p>
-        </div>
-        <div class="test-card">
-          <p class="quote">"The excursions were amazing and the teachers were so fun. I can't wait to come back next summer!"</p>
-          <p class="name">Alex</p>
-          <p class="country">Spain 🇪🇸</p>
-        </div>
-        <div class="test-card">
-          <p class="quote">"I was nervous at first but everyone was so welcoming. London is the perfect city for this camp!"</p>
-          <p class="name">Valentina</p>
-          <p class="country">Italy 🇮🇹</p>
-        </div>
-        <div class="test-card">
-          <p class="quote">"I learned so much English without even realising it because we were having so much fun every day."</p>
-          <p class="name">Lucas</p>
-          <p class="country">Brazil 🇧🇷</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div><p class="num">6,026+</p><p class="label">Friendships Formed</p></div>
-        <div><p class="num">3,400+</p><p class="label">Dreams Fulfilled</p></div>
-        <div><p class="num">98%</p><p class="label">Wish to Come Back</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <section class="footer">
-    <h2>Ready for the Best Summer Ever? 🌞</h2>
-    <p class="sub">Spots fill up fast — register now for Sol Camps London 2026!</p>
-    <a href="https://solcamps.com" target="_blank" class="btn">Register at SolCamps.com →</a>
-    <div class="socials">
-      <a href="https://www.facebook.com/solcamps" target="_blank">📘</a>
-      <a href="https://www.instagram.com/solcamps" target="_blank">📸</a>
-      <a href="https://www.youtube.com/@solcamps" target="_blank">🎬</a>
-    </div>
-    <p class="copy">© 2026 Sol Camps · info@solcamps.com · solcamps.com</p>
-  </section>
-
+  <script src="script.js"></script>
 </body>
 </html>

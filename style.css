@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: hsl(230, 35%, 12%);
+  color: hsl(220, 20%, 95%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Ambient background orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 {
+  top: -10rem;
+  left: -10rem;
+  width: 24rem;
+  height: 24rem;
+  background: hsl(250, 85%, 67%);
+  opacity: 0.07;
+  filter: blur(100px);
+}
+.orb-2 {
+  top: 33%;
+  right: -8rem;
+  width: 20rem;
+  height: 20rem;
+  background: hsl(290, 70%, 60%);
+  opacity: 0.06;
+  filter: blur(100px);
+}
+.orb-3 {
+  bottom: -5rem;
+  left: 33%;
+  width: 18rem;
+  height: 18rem;
+  background: hsl(190, 80%, 55%);
+  opacity: 0.05;
+  filter: blur(100px);
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header-icon {
+  display: inline-flex;
+  padding: 0.625rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, hsl(250, 85%, 67%), hsl(290, 70%, 60%));
+  box-shadow: 0 0 30px hsl(250, 85%, 67%, 0.2), 0 0 60px hsl(250, 85%, 67%, 0.1);
+  margin-bottom: 0.75rem;
+}
+
+.site-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, hsl(250, 85%, 67%), hsl(190, 80%, 55%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.site-header p {
+  color: hsl(220, 15%, 60%);
+  font-size: 1rem;
+}
+
+/* Container */
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto 4rem;
+  display: grid;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass card */
+.glass-card {
+  background: hsl(230, 30%, 20%, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(230, 20%, 35%, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.glass-card:first-child {
+  box-shadow: 0 0 30px hsl(250, 85%, 67%, 0.2), 0 0 60px hsl(250, 85%, 67%, 0.1);
+}
+
+.glass-card h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-primary {
+  color: hsl(250, 85%, 67%);
+}
+
+/* Form */
+.grade-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.375rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: hsl(220, 15%, 60%);
+}
+
+input {
+  padding: 0.75rem 1rem;
+  border: 1px solid hsl(230, 20%, 28%);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background: hsl(225, 20%, 22%, 0.5);
+  color: hsl(220, 20%, 95%);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+}
+
+input::placeholder {
+  color: hsl(220, 15%, 60%);
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(250, 85%, 67%, 0.5);
+  border-color: hsl(250, 85%, 67%, 0.5);
+}
+
+/* Buttons */
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, hsl(250, 85%, 67%), hsl(290, 70%, 60%));
+  color: white;
+  box-shadow: 0 0 30px hsl(250, 85%, 67%, 0.2), 0 0 60px hsl(250, 85%, 67%, 0.1);
+}
+
+.btn.primary:hover {
+  opacity: 0.9;
+}
+
+.btn.secondary {
+  background: hsl(220, 25%, 25%);
+  color: hsl(220, 20%, 90%);
+}
+
+.btn.secondary:hover {
+  background: hsl(220, 25%, 30%);
+}
+
+/* Message */
+.message {
+  min-height: 1.2rem;
+  font-weight: 600;
+  color: hsl(0, 72%, 55%);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+/* Summary */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.summary-box {
+  background: hsl(230, 30%, 20%, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(230, 20%, 35%, 0.4);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px hsl(250, 85%, 67%, 0.2), 0 0 60px hsl(250, 85%, 67%, 0.1);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px hsl(190, 80%, 55%, 0.15);
+}
+
+.summary-label {
+  display: block;
+  color: hsl(220, 15%, 60%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.accent-text {
+  color: hsl(190, 80%, 55%);
+}
+
+.grade-green { color: hsl(160, 60%, 55%); }
+.grade-blue { color: hsl(200, 80%, 60%); }
+.grade-amber { color: hsl(40, 90%, 55%); }
+.grade-red { color: hsl(0, 70%, 60%); }
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid hsl(230, 20%, 28%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th {
+  padding: 0.875rem;
+  text-align: left;
+  font-weight: 500;
+  color: hsl(220, 15%, 60%);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: hsl(225, 20%, 22%, 0.3);
+  border-bottom: 1px solid hsl(230, 20%, 28%);
+}
+
+td {
+  padding: 0.875rem;
+  border-bottom: 1px solid hsl(230, 20%, 28%, 0.5);
+}
+
+tbody tr {
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: hsl(225, 20%, 22%, 0.2);
+}
+
+.empty-state {
+  text-align: center;
+  color: hsl(220, 15%, 60%);
+  padding: 2rem 0.875rem !important;
+}
+
+.delete-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: hsl(0, 72%, 55%, 0.1);
+  color: hsl(0, 72%, 55%);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background: hsl(0, 72%, 55%);
+  color: white;
+}
+
+.percent-good { color: hsl(160, 60%, 55%); }
+.percent-bad { color: hsl(0, 70%, 60%); }
+
+@media (max-width: 700px) {
+  .form-row,
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-header h1 {
+    font-size: 1.75rem;
+  }
+}
