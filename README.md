@@ -26,6 +26,5 @@ Through this project, I learned how to:
 ## Files included
 - `index.html`
 - `style.css`
-- `script.js`
 - `PROPOSAL.md`
 
