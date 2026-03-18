@@ -1,19 +1,20 @@
-## Client Brief
+# Mini Project #2 Proposal
 
-**Client:** Lachlan: Summer Program Coordinator at Sol Camps  
-**Purpose:** To create a simple website that clearly explains Sol Camps’ summer program and helps families easily get in touch.  
-**Audience:** Parents and guardians researching summer programs, and students who want to learn what the camp offers.  
-**Key action:** Contact Sol Camps or submit interest in the summer program.
+## What I'm building
+I am building an interactive grade calculator that lets users enter assignments, scores, and weights to calculate their current and projected course grade.
 
-**Pages/sections needed:**
-- Home (overview of Sol Camps and brief introduction)
-- Summer Program (dates, ages, location, basic daily schedule)
-- Contact (email information and simple inquiry form)
+## Who it's for / Why
+This tool is for students who want a quick way to track their class performance and understand how each assignment affects their final grade. It solves the problem of having to manually calculate grades every time a new score is added.
 
-**Content status:** I have general information about the program. I still need final dates, confirmed location details, pricing information (if included), and 1–2 official photos or a logo from Sol Camps.
+## Core features
+- Add assignments with a name, score earned, score possible, and weight
+- Automatically calculate the current weighted grade
+- Show how much of the course grade has been entered so far
+- Delete individual assignments
+- Reset all data and start over
 
-**Style preferences:** Very simple and clean. Minimal colors, easy-to-read fonts, straightforward layout, and mobile-friendly design. No heavy animations or complex styling.
-
-**Inspiration sites:**
-- Basic summer camp websites - liked their simple layout and clear navigation  
-- Simple educational program pages - liked the clear headings and easy-to-find contact information
+## What I don't know yet
+- How to store data in arrays of objects
+- How to dynamically create and remove DOM elements
+- How to recalculate totals every time the user changes input
+- How to save data using localStorage
