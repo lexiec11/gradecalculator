@@ -13,6 +13,7 @@ This is an interactive web tool that helps students calculate their current and 
 7. Delete rows or reset everything if needed
 
 ## Live site
+https://lexiec11.github.io/gradecalculator/
 
 
 ## What I learned
